@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransMilenio GO | Planificador de Rutas</title>
+    <meta name="description" content="Encuentra la mejor ruta en el sistema TransMilenio de Bogotá">
+    
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Pre-loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-icon">
+                <i class="fas fa-bus"></i>
+            </div>
+            <p>Cargando TransMilenio GO...</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="logo">
+                <i class="fas fa-bus"></i>
+                <h1>TransMilenio <span>GO</span></h1>
+            </div>
+            <p class="tagline">Tu planificador inteligente de rutas</p>
+            <a href="#app-container" class="cta-button">
+                Comenzar <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main App Container -->
+    <main class="app-container" id="app-container">
+        <div id="root"></div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-route"></i>
+            <h3>Rutas Óptimas</h3>
+            <p>Encuentra el camino más rápido entre estaciones</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3>Mapa Interactivo</h3>
+            <p>Visualiza tu ruta en nuestro mapa detallado</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-clock"></i>
+            <h3>Tiempos Reales</h3>
+            <p>Calculamos el tiempo estimado de tu viaje</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-bus"></i>
+                <span>TransMilenio GO</span>
+            </div>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> Código Fuente</a>
+                <a href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2023 TransMilenio GO. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/src/index.js" type="module"></script>
+    
+    <script>
+        // Ocultar loader cuando la app esté lista
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loader').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
